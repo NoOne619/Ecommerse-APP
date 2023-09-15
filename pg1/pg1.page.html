@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+    <ion-row >
+      <ion-col   class="adjust1 " offset=".5" size="2" size-md="1">
+        <ion-icon (click)="goto(0)" name="arrow-back-circle" ></ion-icon>
+      </ion-col>
+        <ion-col  class="adjust1" offset="8.5" size="1" size-md="1">
+        
+          <ion-icon  name="search"></ion-icon>
+        
+        </ion-col>
+        <ion-col offset=".5" size="11" size-md="11">
+        
+          <ion-text color="dark">
+            <h2><b>Electronics</b></h2>
+          </ion-text>
+        
+        </ion-col>
+      
+    <ion-col size="6 " size-md="3"  *ngFor="let product of items">
+      <ion-card style="box-shadow: none;" class="ion-text-center" (click)="goto(product)">
+        <ion-icon class="adjust2" color="dark" name="heart-circle"></ion-icon>
+          <img  src={{product.img}} alt="">
+        <p><b>{{product.title}}</b></p>
+          <ion-text>
+            {{product.details}}
+          </ion-text>
+        <p><b>${{product.price}}</b></p>
+          </ion-card>
+        
+  
+    </ion-col>
+    <ion-col style="height: 50px;" size="12" size-md="12">
+
+    </ion-col>
+
+     <app-footer [check]="1"></app-footer>
+      
+    </ion-row>
+  
+</ion-content>

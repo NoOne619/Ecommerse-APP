@@ -1,0 +1,44 @@
+
+<ion-row>
+  <ion-col size="12" size-md="12" style="height: 50px;"></ion-col>
+  <ion-col class="float" size="12" size-md="12">
+    <ion-row >
+      <ion-col  size="3" size-md="3" >
+       
+          <ion-chip *ngIf="check==1" >
+            <ion-icon (click)="gotto_page(1)" size="large" color="dark" name="home"></ion-icon>
+            <ion-label>
+              Home
+            </ion-label>
+          </ion-chip>
+          
+      
+       
+        <ion-icon size="large" *ngIf="check!=1" (click)="gotto_page(1)"  color="dark" name="home"></ion-icon>
+    
+      </ion-col>
+      <ion-col  size="3" size-md="3">
+        
+        <ion-chip *ngIf="check==2;" >
+        <ion-icon (click)="gotto_page(2)" size="large" color="dark" name="cart"></ion-icon>
+        <ion-label>
+          Cart
+        </ion-label>
+        
+      </ion-chip>
+      
+    
+      <ion-icon *ngIf="check!=2" size="large" (click)="gotto_page(2)"  color="dark" name="cart"></ion-icon>
+  
+      </ion-col>
+      
+      <ion-col   size="3" size-md="3">
+        <ion-icon (click)="gotto_page(3)" size="large" color="dark" name="person"></ion-icon>
+      </ion-col>
+      <ion-col   size="3" size-md="3">
+        <ion-icon size="large" color="dark" name="notifications"></ion-icon>
+      </ion-col>
+    </ion-row>
+  
+  </ion-col>
+</ion-row>

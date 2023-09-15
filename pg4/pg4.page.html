@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col offset=".5" size="9" size-md="9">
+      <ion-icon (click)="gotto(0)" name="arrow-back-circle" size="large"></ion-icon>
+    </ion-col>
+    <ion-col size="2" size-md="2">
+      <ion-badge color="danger">{{sum}}</ion-badge>
+      <ion-list class="circle">
+        <ion-icon name="bag-outline"> </ion-icon>
+      </ion-list>
+    </ion-col>
+    <ion-col offset=".5" size="11" size-md="11">
+      <h2><b>My product</b></h2>
+
+    </ion-col>
+
+
+    <ion-col size="12" size-md="10" class="adjust3" *ngFor="let product of cart;let i=index">
+      <ion-card>
+        <ion-card-content>
+          <ion-row>
+
+            <ion-col size="4" size-md="4">
+              <img src={{product.img}} alt="">
+            </ion-col>
+            <ion-col size="5.5" size-md="6">
+              <ion-text color="dark">
+                <b>
+                  {{product.title}}
+                </b>
+              </ion-text><br>
+              {{product.details}} <br><br>
+              <ion-text color="dark">
+                <b>
+                  ${{product.price}}
+                </b>
+              </ion-text><br>
+
+            </ion-col>
+            <ion-col size="2.5" size-md="2">
+              <ion-list class="quantity">
+                <ion-icon color="dark" size="xsmall" name="add-outline"
+                  (click)="this.increament(i)"></ion-icon>{{product.quantity}}<ion-icon color="dark" size="xsmall"
+                  (click)="this.decreament(i)" name="remove-outline"></ion-icon>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="11" size-md="8" class="adjust1">
+
+      <ion-item>
+        <ion-text><b>SubTotal :</b></ion-text>
+        <ion-card-title slot="end"><b>${{total_price}}</b></ion-card-title>
+
+      </ion-item>
+      <ion-item>
+        <ion-text><b>Shipping :</b></ion-text>
+        <ion-card-title slot="end"><b>${{shipment_charge}}</b></ion-card-title>
+
+      </ion-item>
+      <ion-item>
+
+        <ion-text><b>BagTotal :</b></ion-text>
+        <ion-text slot="end" color="medium">({{sum}} cart)</ion-text>
+        <ion-card-title slot="end"><b>${{(shipment_charge+total_price)}}</b></ion-card-title>
+
+      </ion-item>
+
+
+
+    </ion-col>
+
+    <ion-col size="11" size-md="5" class="adjust3 ">
+      <ion-button (click)="gotto(1)" expand="full" shape="round" color="dark">
+        <p>Proceed Payment</p>
+      </ion-button>
+
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>

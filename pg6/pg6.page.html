@@ -1,0 +1,107 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-list *ngIf="flag;">
+      <ion-text>
+        <b>Timer :</b>{{this.time}}
+
+      </ion-text>
+    </ion-list>
+    <ion-col class="ion-text-center" size="12" size-md="12">
+      <img src="../../assets/img/signature.png" alt="">
+      <p class="adjust1">MY LIFE MY STYLE</p>
+    </ion-col>
+    <ion-col size="11" size-md="8" class="adjust2">
+      <h3><b>Welcome</b></h3>
+      <ion-text color="medium"> please login or signin to continue our page</ion-text>
+    </ion-col>
+    <ion-col size="11" size-md="8" class="adjust2">
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="Email" color="dark" labelPlacement="stacked" [(ngModel)]="this.user1.username"
+            (ngModelChange)="updated()">
+            <div slot="label"><b>Email</b></div>
+          </ion-input>
+
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+    <ion-col size="11" size-md="8" class="adjust2">
+
+      <ion-list>
+        <ion-item>
+          <ion-input type="password" color="dark" labelPlacement="stacked" [(ngModel)]="this.user1.password"
+            (ngModelChange)="updated()">
+            <div slot="label"><b>Password</b></div>
+          </ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+    <ion-col size="10" size-md="5" style="margin-left: auto;margin-right: auto;">
+      <ion-radio-group value="strawberries">
+        <ion-radio (click)="selector('Manager')" value="grapes">Manager</ion-radio>
+        <ion-radio (click)="selector('Assistent')" value="strawberries">Assistent</ion-radio>
+        <ion-radio (click)="selector('Salesman')" value="pineapple"> Salesman</ion-radio>
+        <ion-radio (click)="selector('Buyer')" value="cherries">Buyer</ion-radio>
+      </ion-radio-group>
+    </ion-col>
+    <ion-col size="12" size-md="12">
+      <ion-row>
+        <ion-col class="adjust2" size="11" size-md="5" (click)="test()">
+          <ion-button [disabled]="this.flag" expand="full" color="dark" shape="round">
+            <h5>Login</h5>
+          </ion-button>
+
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="5.5" size-md="5.5">
+      <ion-item></ion-item>
+    </ion-col>
+    <ion-col class="adjust3 " size="1" size-md="1">
+      or
+    </ion-col>
+    <ion-col size="5.5" size-md="5.5">
+      <ion-item></ion-item>
+    </ion-col>
+    <ion-col size="12" size-md="12">
+      <ion-row>
+        <ion-col class="adjust2" size="11" size-md="5">
+
+          <ion-button expand="full" color="primary" shape="round">
+            <p> <ion-icon name="logo-facebook"></ion-icon>&nbsp;continue with facebook</p>
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="12" size-md="12">
+      <ion-row>
+        <ion-col class="adjust2 " size="11" size-md="5">
+          <ion-button expand="full" color="light" shape="round">
+            <p> <ion-icon color="danger" name="logo-google"></ion-icon>&nbsp;continue with <ion-text color="danger">Google</ion-text>
+            </p>
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col size="12" size-md="12">
+      <ion-row>
+        <ion-col class="adjust2" size="11" size-md="5">
+          <ion-button expand="full" color="light" shape="round">
+            <p> <ion-icon color="success" name="logo-apple"></ion-icon>&nbsp;continue with <ion-text color="success">Apple</ion-text>
+            </p>
+          </ion-button>
+         
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
